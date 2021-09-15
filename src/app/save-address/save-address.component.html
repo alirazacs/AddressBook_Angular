@@ -1,0 +1,25 @@
+<div style="text-align: center;">
+
+    <form [formGroup]='addressForm' (ngSubmit)='submitForm(addressForm)'>
+
+        Name:<input type="text" formControlName='name' name="" id=""> <br>
+        <br>
+        Email:<input type="email" formControlName='email' name="" id=""> <br> <br>
+       
+
+            Gender: <input type="radio" formControlName='gender' [checked]="true" value="male" id="">Male
+            <input type="radio" formControlName='gender' value="female" id="">Female
+       
+        <br><br>
+        <select name="city" id="" formControlName='city'>
+            <option value="" disabled>Select city</option>
+            <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
+
+        </select>
+
+        <br><br>
+        <input type="submit" value="Submit Form">
+
+
+    </form>
+</div>

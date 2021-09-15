@@ -1,0 +1,29 @@
+<div style="text-align: center;">
+    <a [routerLink]="['./save']">Add new Address</a>
+    <br><br>
+
+    <h3 style="float:left">Address List</h3><br>
+    <br><br>
+    
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Gender</td>
+            <td>City</td>
+            <td>Action</td>
+        </tr>
+        <tr *ngFor="let address of addressList">
+            <td>{{address.id}}</td>
+            <td>{{address.name}}</td>
+            <td>{{address.email}}</td>
+            <td>{{address.gender}}</td>
+            <td>{{address.city}}</td>
+            <td> <a [routerLink]="['./update',address.id]">Update</a> | <a [routerLink]="['./delete/'+address.id]" (click)="deleteAddress(address.id)">Delete</a> </td>
+        </tr>
+    </table>
+    
+</div>
+
+<router-outlet></router-outlet>
